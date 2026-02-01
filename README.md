@@ -1,6 +1,10 @@
 This repository contains an end-to-end UI, API, and Visual test automation framework built with Playwright, TypeScript, and Percy.
 
 
+
+		
+
+
 🚀 Technologies Used
 
 Playwright – UI & API automation
@@ -17,6 +21,8 @@ Node.js (18+)
 
 
 
+
+
 🌐 Test Targets
 
 UI Base URL: https://www.saucedemo.com
@@ -27,7 +33,9 @@ API Base URL: https://fakestoreapi.com
 📦 Project Setup
 
 Clone the repository:
+
 git clone <repo-url>
+
 cd ui-api-framework
 
 Install dependencies:
@@ -46,16 +54,16 @@ export PERCY_TOKEN=your_percy_token
 
 
 ▶️ Running Tests
-Run all tests (API + UI + Visual)
+Run all tests (API + UI + Visual):
 npx percy exec -- npx playwright test
 
-Run API tests only
+Run API tests only:
 npx playwright test --grep @api
 
-Run UI functional tests only
+Run UI functional tests only:
 npx playwright test --grep @ui 
 
-Run Visual tests only
+Run Visual tests only:
 npx playwright test --grep @visual
 
 
@@ -64,9 +72,9 @@ npx playwright test --grep @visual
 Tests are tagged to enable selective execution:
 
 Tag	Purpose
-@api	API tests
-@ui	UI functional tests
-@visual	Visual regression tests
+@api ->	API tests
+@ui	-> UI functional tests
+@visual	-> Visual regression tests
 
 Example:
 
@@ -74,43 +82,35 @@ test('@ui @visual checkout overview snapshot', async () => {
   ...
 });
 
+
 🧱 Project Structure
-src/
-├── api/
-│   ├── client/
-│   │   └── apiClient.ts        # Generic API client
-│   ├── schemas/
-│   │   └── product.schema.ts   # Zod schemas for API validation
-│   └── tests/
-│       └── api.spec.ts         # API test cases
-│
-├── data/
-│   ├── apiTestData.ts          # API test data
-│   ├── users.ts                # UI test users
-│   ├── products.ts             # Product data
-│   └── checkout.ts             # Checkout-related data
-│
-├── ui/
-│   ├── fixtures/
-│   │   └── Fixtures.ts         # Playwright fixtures
-│   ├── pages/
-│   │   ├── LoginPage.ts
-│   │   ├── ProductsPage.ts
-│   │   ├── CartPage.ts
-│   │   ├── CheckoutDeliveryPage.ts
-│   │   ├── CheckoutOverviewPage.ts
-│   │   └── Header.ts
-│   ├── tests/
-│   │   ├── login.spec.ts
-│   │   ├── products.spec.ts
-│   │   └── checkout.spec.ts
-│   |   └── products.visual.spec.ts
-│
-├── utils/
-│   └── env.ts    
-│
-├── playwright.config.ts
-└── README.md
+
+src/api/client/apiClient.ts    -->    # Generic API client
+
+src/api/schemas/schemas.ts    -->    # Zod schemas for API validation
+
+src/api/tests/api.spec.ts    -->   # API test cases
+
+src/data/apiTestData.ts     -->   # API test data
+
+src/data/users.ts        -->  # UI test users
+
+src/data/products.ts    -->       # Product data
+
+src/data/checkout.ts      -->  # Checkout-related data
+
+src/ui/fixtures/Fixtures.ts --> # Playwright fixtures
+
+src/ui/pages --> # POM for UI pages
+
+src/ui/tests --> # Actual UI tests
+
+src/ui/tests/products.visual.spec.ts --> # Visual products test
+
+
+
+
+
 
 ⚙️ Continuous Integration (CI)
 
