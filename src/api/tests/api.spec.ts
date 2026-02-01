@@ -14,7 +14,7 @@ test.describe('Fake Store API tests', () => {
   });
 
   // Successful login
-  test('successful login returns token', async () => {
+  test('@api successful login returns token', async () => {
     const response = await api.post('/auth/login', validUser);
 
     expect(response.status()).toBe(201);
@@ -25,7 +25,7 @@ test.describe('Fake Store API tests', () => {
   });
 
   // Get product and validate content
-  test('get product and validate fields', async () => {
+  test('@api get product and validate fields', async () => {
     const response = await api.get('/products/1');
 
     expect(response.status()).toBe(200);
@@ -40,7 +40,7 @@ test.describe('Fake Store API tests', () => {
   });
 
   // Create new cart
-  test('create new cart with existing product', async () => {
+  test('@api create new cart with existing product', async () => {
     const response = await api.post('/carts', newCart);
 
     expect(response.status()).toBe(201);
@@ -53,7 +53,7 @@ test.describe('Fake Store API tests', () => {
   });
 
   // Delete a user
-  test('delete user successfully', async () => {
+  test('@api delete user successfully', async () => {
     const response = await api.delete('/users/1');
 
     expect(response.status()).toBe(200);
@@ -63,21 +63,21 @@ test.describe('Fake Store API tests', () => {
   });
 
   // Negative scenario 1 — invalid login
-  test('login fails with invalid credentials', async () => {
+  test('@api login fails with invalid credentials', async () => {
     const response = await api.post('/auth/login', invalidUser);
 
     expect(response.status()).toBe(401);
   });
 
   // Negative scenario 2 — product not found
-  test('get non-existing product returns 404', async () => {
+  test('@api get non-existing product returns 404', async () => {
     const response = await api.get('/products/%%');
 
     expect(response.status()).toBe(400);
   });
 
   // Testing product data schema validation with zod
-  test('get product schema is valid', async () => {
+  test('@api get product schema is valid', async () => {
     const response = await api.get('/products/1');
     const body = await response.json();
 

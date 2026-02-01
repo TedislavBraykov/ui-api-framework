@@ -2,7 +2,7 @@ import { test, expect } from '../fixtures/Fixtures';
 import { users } from '../../data/users';
 
 test.describe('Products - sorting from Z-A', () => {
-  test('should sort products by name Z-A', async ({
+  test('@ui should sort products by name Z-A', async ({
     loginPage,
     productsPage
   }) => {

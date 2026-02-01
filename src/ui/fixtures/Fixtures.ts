@@ -6,6 +6,8 @@ import { CartPage } from '../pages/CartPage';
 import { CheckoutDeliveryPage } from '../pages/CheckoutDeliveryPage';
 import { CheckoutOverviewPage } from '../pages/CheckoutOverviewPage';
 
+// creating instances of page objects for use in tests
+
 type Fixtures = {
   loginPage: LoginPage;
   productsPage: ProductsPage;

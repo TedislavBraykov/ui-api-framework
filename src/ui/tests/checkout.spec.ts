@@ -3,7 +3,7 @@ import { checkoutInfo } from "../../data/checkout";
 import { users } from "../../data/users";
 
 test.describe("Checkout - complete purchase flow", () => {
-  test("complete checkout and validate total price", async ({
+  test("@ui complete checkout and validate total price", async ({
     loginPage,
     productsPage,
     headerPage,
